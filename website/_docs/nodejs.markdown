@@ -114,7 +114,7 @@ results as files change:
 // `relative_path` is obtained from `resp.relative_path` in the
 // `watch-project` response.
 function make_subscription(client, watch, relative_path) {
-  sub = {
+  var sub = {
     // Match any `.js` file in the dir_of_interest
     expression: ["allof", ["match", "*.js"]],
     // Which fields we're interested in
@@ -175,7 +175,7 @@ function make_time_constrained_subscription(client, watch, relative_path) {
       return;
     }
 
-    sub = {
+    var sub = {
       // Match any `.js` file in the dir_of_interest
       expression: ["allof", ["match", "*.js"]],
       // Which fields we're interested in
